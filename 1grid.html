@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            background-color: white;
+            font-family: "Times New Roman", serif;
+            color: #222;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 90%;
+            margin: 7px auto;
+
+            border: 1px solid #999;
+
+            display: grid;
+
+            grid-template-rows: 60px 435px 45px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background-color: #19536b;
+            color: white;
+
+            display: grid;
+
+            grid-template-columns: 1fr auto;
+
+            align-items: center;
+
+            padding: 0 12px;
+        }
+
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+
+        /* LOGIN REGISTER */
+
+        .buttons {
+            display: grid;
+
+            grid-template-columns: auto auto;
+
+            gap: 5px;
+        }
+
+
+        .buttons button {
+            background-color: #eeeeee;
+
+            border: 1px solid #999;
+
+            padding: 2px 6px;
+
+            font-family: "Times New Roman", serif;
+
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           MAIN AREA
+        ========================= */
+
+        .main {
+            display: grid;
+
+            grid-template-columns: 18% 82%;
+        }
+
+
+        /* =========================
+           LEFT SIDEBAR
+        ========================= */
+
+        .sidebar {
+            background-color: #d7ebf2;
+
+            border-right: 1px solid #888;
+
+            padding-top: 15px;
+        }
+
+
+        .sidebar ul {
+            list-style: none;
+
+            display: grid;
+
+            justify-items: center;
+
+            gap: 26px;
+        }
+
+
+        .sidebar ul li a {
+            text-decoration: none;
+
+            color: #222;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        .sidebar ul li a:hover {
+            color: #19536b;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            text-align: center;
+
+            padding: 30px 25px;
+        }
+
+
+        .content h2 {
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro {
+            font-size: 14px;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================
+           PRODUCT GRID
+        ========================= */
+
+        .product-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            width: 100%;
+        }
+
+
+        /* =========================
+           PRODUCT BOX
+        ========================= */
+
+        .product {
+            min-height: 220px;
+
+            background-color: #f5f5f5;
+
+            padding: 10px;
+
+            text-align: center;
+
+            border-right: 1px solid #eeeeee;
+        }
+
+
+        .product:last-child {
+            border-right: none;
+        }
+
+
+        /* =========================
+           PRODUCT IMAGE
+        ========================= */
+
+        .product img {
+            width: 125px;
+
+            height: 110px;
+
+            object-fit: cover;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           PRODUCT TITLE
+        ========================= */
+
+        .product h3 {
+            font-size: 17px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           PRODUCT DESCRIPTION
+        ========================= */
+
+        .product p {
+            font-size: 13px;
+
+            line-height: 17px;
+
+            padding: 0 8px;
+        }
+
+
+        /* =========================
+           HORIZONTAL LINE
+        ========================= */
+
+        .content hr {
+            border: none;
+
+            border-top: 2px solid #e5eeee;
+
+            margin-top: 38px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background-color: #19536b;
+
+            color: white;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MAIN CONTAINER
+    ========================= -->
+
+    <div class="container">
+
+
+        <!-- =========================
+             HEADER
+        ========================= -->
+
+        <header class="header">
+
+            <h1>E-Commerce</h1>
+
+            <div class="buttons">
+
+                <button>Login</button>
+
+                <button>Register</button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             MAIN
+        ========================= -->
+
+        <div class="main">
+
+
+            <!-- =========================
+                 SIDEBAR
+            ========================= -->
+
+            <aside class="sidebar">
+
+                <ul>
+
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Smartphones</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Laptops</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Headphones</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Smart Watches</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Special Offers</a>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+
+            <!-- =========================
+                 CONTENT
+            ========================= -->
+
+            <main class="content">
+
+
+                <h2>
+                    About our Electronic store
+                </h2>
+
+
+                <p class="intro">
+                    Explore modern gadgets and electronics
+                    designed to make your everyday life easier.
+                </p>
+
+
+                <!-- =========================
+                     PRODUCT GRID
+                ========================= -->
+
+                <div class="product-grid">
+
+
+                    <!-- SMARTPHONES -->
+
+                    <div class="product">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"
+                            alt="Smartphones">
+
+                        <h3>
+                            Smartphones
+                        </h3>
+
+                        <p>
+                            Latest smartphones with powerful
+                            features and stylish designs.
+                        </p>
+
+                    </div>
+
+
+                    <!-- LAPTOPS -->
+
+                    <div class="product">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400"
+                            alt="Laptops">
+
+                        <h3>
+                            Laptops
+                        </h3>
+
+                        <p>
+                            Fast and reliable laptops for
+                            students and professionals.
+                        </p>
+
+                    </div>
+
+
+                    <!-- HEADPHONES -->
+
+                    <div class="product">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+                            alt="Headphones">
+
+                        <h3>
+                            Headphones
+                        </h3>
+
+                        <p>
+                            Enjoy clear sound with comfortable
+                            wireless headphones.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SMART WATCHES -->
+
+                    <div class="product">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+                            alt="Smart Watches">
+
+                        <h3>
+                            Smart Watches
+                        </h3>
+
+                        <p>
+                            Track your time, activities and
+                            stay connected every day.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- LINE -->
+
+                <hr>
+
+
+            </main>
+
+        </div>
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer class="footer">
+
+            © 2026 E-Commerce | Your Smart Shopping Partner
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

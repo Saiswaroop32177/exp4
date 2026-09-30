@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Flex Model</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        /* Main wrapper */
+        .wrapper {
+            width: 1000px;
+            height: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        /* =========================
+           FLEX CONTAINER
+        ========================= */
+
+        .flex-container {
+            position: absolute;
+
+            left: 100px;
+            top: 150px;
+
+            width: 660px;
+            height: 240px;
+
+            background-color: #f58220;
+
+            border: 3px solid black;
+
+            display: flex;
+
+            flex-direction: row;
+
+            justify-content: space-around;
+
+            align-items: center;
+        }
+
+        /* =========================
+           FLEX ITEMS
+        ========================= */
+
+        .flex-item {
+            width: 165px;
+            height: 110px;
+
+            background-color: yellow;
+
+            border: 3px solid black;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           MAIN AXIS
+        ========================= */
+
+        .main-axis {
+            position: absolute;
+
+            left: 20px;
+            top: 280px;
+
+            width: 920px;
+
+            border-top: 4px solid red;
+        }
+
+        /* Main axis left arrow */
+        .main-axis::before {
+            content: "";
+
+            position: absolute;
+
+            left: -2px;
+            top: -10px;
+
+            width: 0;
+            height: 0;
+
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 12px solid red;
+        }
+
+        /* Main axis right arrow */
+        .main-axis::after {
+            content: "";
+
+            position: absolute;
+
+            right: -2px;
+            top: -10px;
+
+            width: 0;
+            height: 0;
+
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid red;
+        }
+
+        .main-axis-text {
+            position: absolute;
+
+            right: 40px;
+            top: 250px;
+
+            color: #356b35;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           CROSS AXIS
+        ========================= */
+
+        .cross-axis {
+            position: absolute;
+
+            left: 325px;
+            top: 30px;
+
+            height: 460px;
+
+            border-left: 4px solid red;
+        }
+
+        /* Cross axis top arrow */
+        .cross-axis::before {
+            content: "";
+
+            position: absolute;
+
+            left: -10px;
+            top: -2px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid red;
+        }
+
+        /* Cross axis bottom arrow */
+        .cross-axis::after {
+            content: "";
+
+            position: absolute;
+
+            left: -10px;
+            bottom: -2px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid red;
+        }
+
+        .cross-axis-text {
+            position: absolute;
+
+            left: 345px;
+            top: 25px;
+
+            color: #356b35;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           MAIN START
+        ========================= */
+
+        .main-start-line {
+            position: absolute;
+
+            left: 100px;
+            top: 390px;
+
+            height: 65px;
+
+            border-left: 3px solid red;
+        }
+
+        .main-start-line::after {
+            content: "";
+
+            position: absolute;
+
+            left: -7px;
+            top: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid red;
+        }
+
+        .main-start-text {
+            position: absolute;
+
+            left: 120px;
+            top: 420px;
+
+            color: #356b35;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           MAIN END
+        ========================= */
+
+        .main-end-line {
+            position: absolute;
+
+            left: 760px;
+            top: 390px;
+
+            height: 65px;
+
+            border-left: 3px solid red;
+        }
+
+        .main-end-line::after {
+            content: "";
+
+            position: absolute;
+
+            left: -7px;
+            top: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid red;
+        }
+
+        .main-end-text {
+            position: absolute;
+
+            left: 780px;
+            top: 420px;
+
+            color: #356b35;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           CROSS START
+        ========================= */
+
+        .cross-start-line {
+            position: absolute;
+
+            left: 760px;
+            top: 145px;
+
+            width: 130px;
+
+            border-top: 3px solid red;
+        }
+
+        .cross-start-line::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: -7px;
+
+            width: 0;
+            height: 0;
+
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 10px solid red;
+        }
+
+        .cross-start-text {
+            position: absolute;
+
+            left: 765px;
+            top: 115px;
+
+            color: #356b35;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           CROSS END
+        ========================= */
+
+        .cross-end-line {
+            position: absolute;
+
+            left: 760px;
+            top: 390px;
+
+            width: 130px;
+
+            border-top: 3px solid red;
+        }
+
+        .cross-end-line::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: -7px;
+
+            width: 0;
+            height: 0;
+
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 10px solid red;
+        }
+
+        .cross-end-text {
+            position: absolute;
+
+            left: 765px;
+            top: 350px;
+
+            color: #356b35;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           FLEX CONTAINER LABEL
+        ========================= */
+
+        .container-label {
+            position: absolute;
+
+            left: 350px;
+            top: 175px;
+
+            color: #356b35;
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+
+        <!-- FLEX CONTAINER -->
+
+        <div class="flex-container">
+
+            <div class="flex-item">
+                Flex Item 1
+            </div>
+
+            <div class="flex-item">
+                Flex Item 2
+            </div>
+
+            <div class="flex-item">
+                Flex Item 3
+            </div>
+
+        </div>
+
+
+        <!-- FLEX CONTAINER LABEL -->
+
+        <div class="container-label">
+            Flex Container
+        </div>
+
+
+        <!-- MAIN AXIS -->
+
+        <div class="main-axis"></div>
+
+        <div class="main-axis-text">
+            Main Axis
+        </div>
+
+
+        <!-- CROSS AXIS -->
+
+        <div class="cross-axis"></div>
+
+        <div class="cross-axis-text">
+            Cross Axis
+        </div>
+
+
+        <!-- MAIN START -->
+
+        <div class="main-start-line"></div>
+
+        <div class="main-start-text">
+            Main Start
+        </div>
+
+
+        <!-- MAIN END -->
+
+        <div class="main-end-line"></div>
+
+        <div class="main-end-text">
+            Main End
+        </div>
+
+
+        <!-- CROSS START -->
+
+        <div class="cross-start-line"></div>
+
+        <div class="cross-start-text">
+            Cross Start
+        </div>
+
+
+        <!-- CROSS END -->
+
+        <div class="cross-end-line"></div>
+
+        <div class="cross-end-text">
+            Cross End
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
